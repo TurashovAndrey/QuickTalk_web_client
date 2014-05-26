@@ -1,9 +1,9 @@
 var phonecatApp = angular.module('phonecatApp', []);
  
 phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {
-  $http.get('http://fahlo.loc/leasing/getAdvert').success(function(data) {
-    $scope.advert = data;
+  $http.get('http://fahlo.loc/leasing/getCategories').success(function(data) {
+    $scope.categories = data.categories;
   });
  
-  $scope.orderProp = 'age';
+  $scope.orderProp = 'name';
 });
