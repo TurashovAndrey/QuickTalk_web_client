@@ -1,9 +1,6 @@
-var phonecatApp = angular.module('phonecatApp', []);
- 
-phonecatApp.controller('PhoneListCtrl', function ($scope, $http) {
-  $http.get('http://fahlo.loc/leasing/getCategories').success(function(data) {
-    $scope.categories = data.categories;
-  });
- 
-  $scope.orderProp = 'name';
-});
+var leasingApp = angular.module('leasingApp', ['ngRoute', 'ngResource', 'CategoriesService']);
+
+leasingApp.controller('CategoriesCtrl', ['$scope', 'CategoriesService', function ($scope, CategoriesService) {
+	    $scope.categories = CategoriesService.categories();
+	    $scope.orderProp = 'name';
+}]);
