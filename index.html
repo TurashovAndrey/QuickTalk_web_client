@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" ng-app='leasingApp' ng-init="name = 'Andrey'">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+  <script src="/js/lib/angular/angular.js"></script>
+  <script src="/js/controllers/testcontroller.js"></script>
+  <script src="/js/services/CategoriesService.js"></script>
+  <script src="/js/services/RequestsService.js"></script>
+  <script src="/js/services/AdvertsService.js"></script>
+  <script src="/js/services/UsersService.js"></script>
+</head>
+
+<div class="container" ng-controller="TextAreaWithLimitCtrl"> 
+  <span>Remaining: {{remaining()}} </span>
+  <div class="row">
+     <textarea ng-model="message"></textarea>
+  </div>
+
+  <div ng-class="{'text-warning': shouldWarn()}">
+     <button ng-click="send()" ng-disabled="!hasValidLength()">Send</button>
+     <button ng-click="clear()">Clear</button>
+  </div>
+</div>
+
+<div ng-init="name = 'Test'">
+  Hello {{name}}
+  <input type="text" ng-model="name">
+
+
+<div ng-controller="TestController">
+   <p>Test {{name}}</p>
+   <input type="text" ng-model="name">
+   <p> {{testName()}} </p>
+   <p> =----------------------------=</p>
+   <div ng-repeat="category in categories">
+      <p>{{category.name}}</p>
+   </div>
+</div>
+</div>
+
+<div ng-controller="WorldController">
+   <p ng-repeat="country in countries">Test {{country.name}}, {{country.population}}
+   </p>
+</div>
+
+
+<!--<body ng-controller="CategoriesCtrl">
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+ 
+      Search: <input ng-model="query">
+ 
+    </div>
+    <div class="span10">
+      <!--Body content-->
+ 
+      <ul class="category">
+         <li ng-repeat="category in categories | filter:query | orderBy:orderProp">
+		{{category.id}}
+		<p>{{category.name}}</p>
+	 </li>
+      </ul>
+    </div>
+  </div>
+</div></body> -->
+</html>
