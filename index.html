@@ -5,12 +5,30 @@
   <title>My HTML File</title>
   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
   <script src="/js/lib/angular/angular.js"></script>
+  <script src="/js/lib/angular/angular-resource.js"></script>
+  <script src="/js/lib/angular/angular-route.js"></script>
+
   <script src="/js/controllers/testcontroller.js"></script>
+  <script src="/js/config.js"></script>
+
   <script src="/js/services/CategoriesService.js"></script>
   <script src="/js/services/RequestsService.js"></script>
   <script src="/js/services/AdvertsService.js"></script>
   <script src="/js/services/UsersService.js"></script>
+  <script src="/js/services/CategoriesResource.js"></script>
+
 </head>
+
+<div ng-controller="TestController">
+   <p>Test {{name}}</p>
+   <input type="text" ng-model="name">
+   <p> {{testName()}} </p>
+   <p> =----------------------------=</p>
+   <div ng-repeat="category in categories">
+      <p>{{category.name}}</p>
+   </div>
+</div>
+
 
 <div class="container" ng-controller="TextAreaWithLimitCtrl"> 
   <span>Remaining: {{remaining()}} </span>
@@ -27,17 +45,6 @@
 <div ng-init="name = 'Test'">
   Hello {{name}}
   <input type="text" ng-model="name">
-
-
-<div ng-controller="TestController">
-   <p>Test {{name}}</p>
-   <input type="text" ng-model="name">
-   <p> {{testName()}} </p>
-   <p> =----------------------------=</p>
-   <div ng-repeat="category in categories">
-      <p>{{category.name}}</p>
-   </div>
-</div>
 </div>
 
 <div ng-controller="WorldController">

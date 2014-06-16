@@ -1,0 +1,9 @@
+<div ng-controller="TestController">
+   <p>Test {{name}}</p>
+   <input type="text" ng-model="name">
+   <p> {{testName()}} </p>
+   <p> =----------------------------=</p>
+   <div ng-repeat="category in categories">
+      <p>{{category.name}}</p>
+   </div>
+</div>
