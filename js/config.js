@@ -2,11 +2,15 @@ angular.module("leasingApp").config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/categories', {
-        templateUrl: 'templates/categories-list.html',
+        templateUrl: 'js/templates/categories-list.html',
         controller: 'TestController'
       }).
-      otherwise({
-        redirectTo: '/categories'
+      when('/categories/:category_id', {
+          templateUrl: 'js/templates/types-list.html', 
+          controller: 'TypeController'
+        }).
+      when('/test', {
+        templateUrl: 'js/templates/types-list.html',
+        controller: 'TypeController'
       });
   }]);
-1

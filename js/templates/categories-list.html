@@ -2,8 +2,7 @@
    <p>Test {{name}}</p>
    <input type="text" ng-model="name">
    <p> {{testName()}} </p>
-   <p> =----------------------------=</p>
    <div ng-repeat="category in categories">
-      <p>{{category.name}}</p>
+      <a href="#/categories/{{category.id}}">{{category.name}}</a>
    </div>
 </div>
