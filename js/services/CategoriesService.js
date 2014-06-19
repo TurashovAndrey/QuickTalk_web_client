@@ -13,5 +13,12 @@ angular.module('categoriesModule', [])
               });
               return promise;
           },
+          get_current_category: function() {
+	     return this.current_category 
+	  },
+          set_current_category: function(value) {
+	     this.current_category = value
+	  }
+
   }
 })

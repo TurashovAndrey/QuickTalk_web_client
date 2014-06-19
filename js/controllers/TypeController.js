@@ -1,29 +1,15 @@
 angular.module("leasingApp")
-.controller("TypeController", function(CategoriesService,RequestsService,AdvertsService,UsersService, Categories, $scope, $routeParams) {
-   //Categories.getCategories().$promise.then(function (data) {
-   //         $scope.categories = data.categories;  
-   //     }).finally(function () {
-   //         $scope.isLoading = false;
-   //     });
+.controller("TypeController", function(CategoriesService, Categories, $scope, $routeParams) {
 
-
-   //UsersService.login().then(function(data) {
-   //   $scope.types = data;
-   //});
+   //CategoriesService.set_current_category($routeParams.category_id)
+   //Categories.getTypes().$promise.then(function (data) {
+// 	     $scope.types = data.types;
+//   }).finally(function () {
+//             $scope.isLoading = false;
+//        });
 
 
    CategoriesService.get_types($routeParams.category_id).then(function(data) {
       $scope.types = data.types;
    });
-
-   //RequestsService.get_requests("62a9d59a-4498-412f-9595-a5190433b9d4").then(function(data) {
-   //   $scope.requests = data;
-   //});
-
-
-   //AdvertsService.get_advert("62a9d59a-4498-412f-9595-a5190433b9d4").success(function(data) {
-   //   $scope.advert = data;
-   //});
-
 })
-.constant('MAX_LENGTH', 100); 

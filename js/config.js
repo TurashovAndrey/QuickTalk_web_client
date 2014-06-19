@@ -9,6 +9,14 @@ angular.module("leasingApp").config(['$routeProvider',
           templateUrl: 'js/templates/types-list.html', 
           controller: 'TypeController'
         }).
+      when('/create_advert', {
+          templateUrl: 'js/templates/create_advert.html', 
+          controller: 'CreateAdvertController'
+        }).
+      when('/adverts/:type_id', {
+          templateUrl: 'js/templates/adverts-list.html', 
+          controller: 'AdvertController'
+        }).
       when('/test', {
         templateUrl: 'js/templates/types-list.html',
         controller: 'TypeController'

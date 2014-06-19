@@ -1,18 +1,19 @@
 angular.module("leasingApp",["ngRoute","ngResource", "categoriesModule", "requestsModule", "advertsModule", "usersModule", "CategoriesResource"])
 .controller("TestController", function(CategoriesService,RequestsService,AdvertsService,UsersService, Categories, $scope) {
-   //CategoriesService.get_categories().then(function(data) {
-   //   $scope.categories = data.categories;
-   //});
+   CategoriesService.get_categories().then(function(data) {
+      $scope.categories = data.categories;
+   });
    
    $scope.testName = function() {
      return $scope.name;
    };
 
-   Categories.getCategories().$promise.then(function (data) {
-            $scope.categories = data.categories;  
-        }).finally(function () {
-            $scope.isLoading = false;
-        });
+
+   //Categories.getCategories().$promise.then(function (data) {
+   //         $scope.categories = data.categories;  
+   //     }).finally(function () {
+   //        $scope.isLoading = false;
+   //     });
 
 
    //UsersService.login().then(function(data) {

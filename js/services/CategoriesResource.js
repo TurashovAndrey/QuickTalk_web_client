@@ -1,9 +1,14 @@
 angular.module('CategoriesResource', [])
-.factory("Categories", ['$resource', function($resource) {
-		var Categories = $resource("http://fahlo.loc/leasing/getCategories",{}, {
+.factory("Categories", ['$resource', '$routeParams', function($resource,$routeParams) {
+		var Categories = $resource("http://fahlo.loc/leasing/:custom_url",{}, {
      			getCategories: {
+				params: {'custom_url':'getCategories'},
 				method: 'GET'
-			}
-                 });
-                 return Categories;
+			},
+		        getTypes : {
+				params: {'custom_url':'getTypes', 'category_id': $routeParams.category_id },
+		                method: 'GET'
+                        }
+                });
+                return Categories;
 }]);

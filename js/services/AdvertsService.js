@@ -37,5 +37,12 @@ angular.module('advertsModule', [])
               });
               return promise;
           },
+          get_adverts : function(type_id) {
+              var promise = $http.get('http://fahlo.loc/leasing/getAdverts?type_id='+type_id).then(function (response) {
+                  return response.data;
+              });
+              return promise;
+          },
+
   }
 })
