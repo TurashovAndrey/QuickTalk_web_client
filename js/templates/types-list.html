@@ -1,6 +1,7 @@
 <div ng-controller="TypeController">
-   <p>TestTestTest</p>
-   <div ng-repeat="type in types">
-      <a href="/adverts/{{type.id}}">{{type.name}}</a>
+   <div class='span12'>
+     <div class ='span3 well' ng-repeat="type in types">
+         <a href="#/adverts/{{type.id}}">{{type.name}}</a>
+     </div>
    </div>
 </div>

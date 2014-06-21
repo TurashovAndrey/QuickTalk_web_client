@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app='leasingApp' ng-init="name = 'Andrey'">
+<html lang="en" ng-app='leasingApp'>
 <head>
   <meta charset="utf-8">
   <title>My HTML File</title>
@@ -72,45 +72,7 @@
               </div><!-- /navbar-inner -->
             </div><!-- /navbar -->
           </div>
+
 <div ng-view></div>
-
-<div class="container" ng-controller="TextAreaWithLimitCtrl"> 
-  <div ng-class="{'text-warning': shouldWarn()}">
-     <button ng-click="send()" ng-disabled="!hasValidLength()">Send</button>
-     <button ng-click="clear()">Clear</button>
-  </div>
-</div>
-
-<div ng-init="name = 'Test'">
-  Hello {{name}}
-  <input type="text" ng-model="name">
-</div>
-
-<div ng-controller="WorldController">
-   <p ng-repeat="country in countries">Test {{country.name}}, {{country.population}}
-   </p>
-</div>
-
-
-<!--<body ng-controller="CategoriesCtrl">
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <!--Sidebar content-->
- 
-      Search: <input ng-model="query">
- 
-    </div>
-    <div class="span10">
-      <!--Body content-->
- 
-      <ul class="category">
-         <li ng-repeat="category in categories | filter:query | orderBy:orderProp">
-		{{category.id}}
-		<p>{{category.name}}</p>
-	 </li>
-      </ul>
-    </div>
-  </div>
-</div></body> -->
+</body>
 </html>
