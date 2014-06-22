@@ -6,11 +6,10 @@ angular.module("leasingApp")
 		"password": $scope.password
 	     }
 
-      UsersService.login(data).then(function(data) {
+      UsersService.login(data).success(function(data) {
          $location.path('/categories')
-      }).
-      error(function(error) {
-         $scope.error = error
+      }).error(function(data) {
+         $scope.error = data;
       });
    }
 })

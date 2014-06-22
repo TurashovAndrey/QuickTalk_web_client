@@ -2,9 +2,7 @@ angular.module('usersModule', [])
 .factory("UsersService", function($http, MAX_LENGTH) {
   return { 
           login : function(data) {
-              var promise = $http.post('http://fahlo.loc/leasing/login', data).then(function (response) {
-                  return response.data;
-              });
+              var promise = $http.post('http://fahlo.loc/leasing/login', data);
               return promise;
           },
           sign_up : function(data) {
