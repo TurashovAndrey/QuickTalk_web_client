@@ -1,5 +1,5 @@
 angular.module("leasingApp")
-.controller("UserController", function(UsersService, $scope, $routeParams) {
+.controller("UserController", function(UsersService, $scope, $routeParams, $location) {
    $scope.signin = function() {
       data = {
  		"username": $scope.username,
@@ -7,7 +7,10 @@ angular.module("leasingApp")
 	     }
 
       UsersService.login(data).then(function(data) {
-         $scope.success = data;
+         $location.path('/categories')
+      }).
+      error(function(error) {
+         $scope.error = error
       });
    }
 })
