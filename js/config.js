@@ -23,6 +23,7 @@ angular.module("leasingApp").config(['$routeProvider',
       }).
       when('/profile', {
         templateUrl: 'js/templates/profile.html',
+        controller: 'ProfileController'
       }).
       when('/test', {
         templateUrl: 'js/templates/types-list.html',

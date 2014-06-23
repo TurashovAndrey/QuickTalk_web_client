@@ -43,6 +43,12 @@ angular.module('advertsModule', [])
               });
               return promise;
           },
+          get_user_adverts : function(user_id) {
+              var promise = $http.get('http://fahlo.loc/leasing/getAdverts?user_id='+user_id).then(function (response) {
+                  return response.data;
+              });
+              return promise;
+          },
 
   }
 })

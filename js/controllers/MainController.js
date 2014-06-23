@@ -1,5 +1,5 @@
 angular.module("leasingApp",["ngRoute","ngResource", "categoriesModule", "requestsModule", "advertsModule", "usersModule", "CategoriesResource",'ui.bootstrap','dialogs'])
-.controller("MainController", function(CategoriesService,RequestsService,AdvertsService,UsersService, Categories, $scope) {
+.controller("MainController", function(CategoriesService,RequestsService,AdvertsService,UsersService,Categories, $scope) {
    CategoriesService.get_categories().then(function(data) {
       $scope.categories = data.categories;
    });

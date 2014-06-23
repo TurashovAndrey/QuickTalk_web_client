@@ -5,6 +5,10 @@ angular.module('usersModule', [])
               var promise = $http.post('http://fahlo.loc/leasing/login', data);
               return promise;
           },
+          get_profile : function(data) {
+              var promise = $http.get('http://fahlo.loc/leasing/getProfile', data);
+              return promise;
+          },
           sign_up : function(data) {
               data = {
                            "email": "test@test.com",
