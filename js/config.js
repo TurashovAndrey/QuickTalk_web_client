@@ -3,7 +3,7 @@ angular.module("leasingApp").config(['$routeProvider',
     $routeProvider.
       when('/categories', {
         templateUrl: 'js/templates/categories-list.html',
-        controller: 'TestController'
+        controller: 'MainController'
       }).
       when('/categories/:category_id', {
           templateUrl: 'js/templates/types-list.html', 
@@ -20,6 +20,9 @@ angular.module("leasingApp").config(['$routeProvider',
       when('/login', {
         templateUrl: 'js/templates/login.html',
         controller: 'UserController'
+      }).
+      when('/profile', {
+        templateUrl: 'js/templates/profile.html',
       }).
       when('/test', {
         templateUrl: 'js/templates/types-list.html',
