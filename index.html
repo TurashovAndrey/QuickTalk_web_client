@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/profile.css">
   <link rel="stylesheet" href="css/adverts.css">
+  <link rel="stylesheet" href="css/autocomplete.css">
 
   <script src="/js/lib/angular/angular.js"></script>
   <script src="/js/lib/angular/angular-resource.js"></script>
@@ -16,6 +17,7 @@
 
 
   <script src="/js/controllers/MainController.js"></script>
+  <script src="/js/controllers/MyCtrl.js"></script>
   <script src="/js/controllers/TypeController.js"></script>
   <script src="/js/controllers/ProfileController.js"></script>
   <script src="/js/controllers/UserController.js"></script>
@@ -28,6 +30,8 @@
   <script src="/js/services/AdvertsService.js"></script>
   <script src="/js/services/UsersService.js"></script>
   <script src="/js/services/CategoriesResource.js"></script>
+
+  <script src="/js/directives/autocomplete.js"></script>
 </head>
 
 <body>
@@ -81,6 +85,19 @@
               </div><!-- /navbar-inner -->
             </div><!-- /navbar -->
           </div>
+
+
+  <div ng-controller="MyCtrl">
+    <div class="main">
+      <h2>Search for new released movies:</h2>
+      <autocomplete ng-model="result" attr-placeholder="type to search movies..." click-activation="true" data="movies" on-type="doSomething" on-select="doSomethingElse"></autocomplete>
+      <br>
+      <div class="description">
+        This is a simple autocomplete directive for AngularJS, packaged in a Angular module. You can check out the source code or download it here:
+        <br><br>
+        <a href="https://github.com/JustGoscha/allmighty-autocomplete">Allmigty-Autocomplete on GitHub</a>
+      </div>
+    </div>
 
 <div ng-view></div>
 </body>
