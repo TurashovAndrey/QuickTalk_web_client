@@ -1,4 +1,4 @@
-angular.module('categoriesModule', [])
+angular.module('CategoriesModule', [])
 .factory("CategoriesService", function($http, MAX_LENGTH) {
   return { 
           get_categories : function() {
