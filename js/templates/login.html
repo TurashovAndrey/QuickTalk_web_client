@@ -1,12 +1,23 @@
- <div class="container" controller="UserController">
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Username" ng-model="username">
-        <input type="password" class="input-block-level" placeholder="Password" ng-model="password">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-large btn-primary" type="submit" ng-click='signin()'>Sign in</button>
-      </form>
+<div class="container well" style="width:220px;" controller="UserController">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Please sign in</h3>
+			 	</div>
+			  	<div class="panel-body">
+			    	<form accept-charset="UTF-8" role="form">
+                                <fieldset>
+			    	  	<div class="form-group">
+			    		    <input class="form-control" placeholder="E-mail" name="email" type="text" ng-model="username">
+			    		</div>
+			    		<div class="form-group">
+			    			<input class="form-control" placeholder="Password" name="password" type="password" value="" ng-model="password">
+			    		</div>
+			    		<input class="btn btn-success btn-block btn-large" type="submit" value="Login" ng-click='signin()'>
+			    	</fieldset>
+			      	</form>
+			    </div>
+			</div>
+		</div>
+</div>
 
-    </div>
+
