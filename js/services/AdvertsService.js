@@ -1,8 +1,9 @@
 angular.module('advertsModule', [])
-.factory("AdvertsService", function($http, MAX_LENGTH) {
+.factory("AdvertsService", function($http, ServerURL) {
   return { 
           get_advert : function(advert_id) {
-              var promise = $http.get('http://fahlo.loc/leasing/getAdvert?advert_id='+advert_id).then(function (response) {
+              var method = '/getAdvert?advert_id='+advert_id;
+              var promise = $http.get(ServerURL+method).then(function (response) {
                   return response.data;
               });
               return promise;
@@ -15,13 +16,15 @@ angular.module('advertsModule', [])
                            "group_id": "1",
                            "price": "50"
                          }
-              var promise = $http.post('http://fahlo.loc/leasing/createAdvert', data).then(function (response) {
+	      var method = '/createAdvert';
+              var promise = $http.post(ServerURL+method, data).then(function (response) {
                   return response.data;
               });
               return promise;
           },
           get_advert_comments: function(advert_id) {
-              var promise = $http.get('http://fahlo.loc/leasing/getAdvertComments?advert_id='+advert_id).then(function (response) {
+	      var method = '/getAdvertComments?advert_id='+advert_id;
+              var promise = $http.get(ServerURL+method).then(function (response) {
                   return response.data;
               });
               return promise;
@@ -32,7 +35,8 @@ angular.module('advertsModule', [])
                            "from_user_id": "6e12f572-ed56-43b8-9aaf-a7f08f4ff1af",
                            "description": "1"
                          }
-              var promise = $http.post('http://fahlo.loc/leasing/createAdvertComment', data).then(function (response) {
+	      var method = '/createAdvertComment';
+              var promise = $http.post(ServerURL+method, data).then(function (response) {
                   return response.data;
               });
               return promise;
@@ -40,20 +44,23 @@ angular.module('advertsModule', [])
           get_adverts : function(type_id) {
               if (type_id)
               {
-                 var promise = $http.get('http://fahlo.loc/leasing/getAdverts?type_id='+type_id).then(function (response) {
+                 var method = '/getAdverts?type_id='+type_id
+                 var promise = $http.get(ServerURL+method).then(function (response) {
                     return response.data;
                  });
               }
 	      else
               {
-                 var promise = $http.get('http://fahlo.loc/leasing/getAdverts').then(function (response) {
+                 var method = '/getAdverts';
+                 var promise = $http.get(ServerURL+method).then(function (response) {
                     return response.data;
                  });
               }
               return promise;
           },
           get_user_adverts : function(user_id) {
-              var promise = $http.get('http://fahlo.loc/leasing/getAdverts?user_id='+user_id).then(function (response) {
+              var method = '/getAdverts?user_id='+user_id
+              var promise = $http.get(ServerURL+method).then(function (response) {
                   return response.data;
               });
               return promise;

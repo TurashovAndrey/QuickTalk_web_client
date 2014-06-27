@@ -1,5 +1,5 @@
 angular.module('usersModule', [])
-.factory("UsersService", function($http, MAX_LENGTH) {
+.factory("UsersService", function($http, ServerURL) {
   return { 
           login : function(data) {
               var promise = $http.post('http://fahlo.loc/leasing/login', data);
@@ -9,23 +9,14 @@ angular.module('usersModule', [])
               var promise = $http.get('http://fahlo.loc/leasing/getProfile', data);
               return promise;
           },
-          sign_up : function(data) {
-              data = {
-                           "email": "test@test.com",
-                           "password": "12345678",
-                     }
-
-              var promise = $http.post('http://fahlo.loc/leasing/signup', data).then(function (response) {
-                  return response.data;
-              });
-
+          signup : function(data) {
+              var promise = $http.post('http://fahlo.loc/leasing/signup', data);
               return promise;
           },
           logout : function() {
               data = "";
-              var promise = $http.post('http://fahlo.loc/leasing/logout', data).then(function (response) {
-                  return response.data;
-              });
+              var promise = $http.post('http://fahlo.loc/leasing/logout', data);
+              return promise;
           }
   }
 })

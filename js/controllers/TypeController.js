@@ -1,5 +1,5 @@
 angular.module("leasingApp")
-.controller("TypeController", function(CategoriesService, Categories, $scope, $routeParams) {
+.controller("TypeController", function(CategoriesService, $scope, $routeParams) {
 
    //CategoriesService.set_current_category($routeParams.category_id)
    //Categories.getTypes().$promise.then(function (data) {

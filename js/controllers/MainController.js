@@ -35,7 +35,7 @@ angular.module("leasingApp",["ngRoute","ngResource", "requestsModule", "advertsM
    //});
 
 })
-.constant('MAX_LENGTH', 100);
+.constant('ServerURL', 'http://fahlo.loc/leasing');
 
 
 //var TestController = function($scope) {

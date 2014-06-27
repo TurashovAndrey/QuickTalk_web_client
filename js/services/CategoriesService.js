@@ -1,14 +1,16 @@
 angular.module('CategoriesModule', [])
-.factory("CategoriesService", function($http, MAX_LENGTH) {
+.factory("CategoriesService", function($http, ServerURL) {
   return { 
           get_categories : function() {
-              var promise = $http.get('http://fahlo.loc/leasing/getCategories').then(function (response) {
+              var method = '/getCategories'
+              var promise = $http.get(ServerURL+method).then(function (response) {
                   return response.data;
               });
               return promise;
           },
           get_types : function(category_id) {
-              var promise = $http.get('http://fahlo.loc/leasing/getTypes?category_id='+category_id).then(function (response) {
+              var method = '/getTypes?category_id='+category_id
+              var promise = $http.get(ServerURL + method).then(function (response) {
                   return response.data;
               });
               return promise;

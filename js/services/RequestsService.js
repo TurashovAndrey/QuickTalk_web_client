@@ -1,5 +1,5 @@
 angular.module('requestsModule', [])
-.factory("RequestsService", function($http, MAX_LENGTH) {
+.factory("RequestsService", function($http, ServerURL) {
   return { 
           get_requests : function(advert_id) {
               var promise = $http.get('http://fahlo.loc/leasing/getRequests?advert_id='+advert_id).then(function (response) {
