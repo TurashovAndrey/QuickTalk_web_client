@@ -8,6 +8,7 @@ angular.module("leasingApp")
 
       UsersService.login(data).success(function(data) {
          UsersService.user_id = data.token;
+	 UsersService.username = data.username;
          UsersService.is_logged_in = true;
          $location.path('/categories')
       }).error(function(data) {
@@ -21,6 +22,14 @@ angular.module("leasingApp")
       else	
 	return true;
    }
+
+   $scope.get_username = function() {
+	return UsersService.username;
+   }	
+
+   $scope.$watch(UsersService.username, function() {
+	$scope.username = UsersService.username;	
+   });
 
    $scope.signup = function() {
       data = {
