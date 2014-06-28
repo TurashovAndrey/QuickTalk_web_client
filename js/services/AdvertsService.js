@@ -65,6 +65,5 @@ angular.module('advertsModule', [])
               });
               return promise;
           },
-
   }
 })

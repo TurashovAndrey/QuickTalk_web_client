@@ -2,20 +2,23 @@ angular.module('usersModule', [])
 .factory("UsersService", function($http, ServerURL) {
   return { 
           login : function(data) {
-              var promise = $http.post('http://fahlo.loc/leasing/login', data);
+              var method = '/login';
+              var promise = $http.post(ServerURL + method, data);
               return promise;
           },
           get_profile : function(data) {
-              var promise = $http.get('http://fahlo.loc/leasing/getProfile', data);
+              var method = '/getProfile';
+              var promise = $http.get(ServerURL + method, data);
               return promise;
           },
           signup : function(data) {
-              var promise = $http.post('http://fahlo.loc/leasing/signup', data);
+              var method = '/signup';
+              var promise = $http.post(ServerURL + method, data);
               return promise;
           },
           logout : function() {
-              data = "";
-              var promise = $http.post('http://fahlo.loc/leasing/logout', data);
+              var method = '/logout';
+              var promise = $http.post(ServerURL + method, data);
               return promise;
           }
   }
