@@ -34,11 +34,12 @@ angular.module("leasingApp").config(['$routeProvider',
         controller: 'UserController'
       }).
       when('/logout', {
-        controller: 'UserController'
+        templateUrl: 'js/templates/signup.html',
+        controller: 'LogoutController'
       }).
       when('/profile', {
-        templateUrl: 'js/templates/profile.html',
-        controller: 'ProfileController'
+        controller: 'ProfileController',
+        templateUrl: 'js/templates/profile.html'
       }).
       when('/test', {
         templateUrl: 'js/templates/types-list.html',
