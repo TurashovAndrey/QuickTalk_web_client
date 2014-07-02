@@ -9,13 +9,13 @@ angular.module('advertsModule', [])
               return promise;
           },
           create_advert: function(data) {
-              var data = {
-                           "title": "Test",
-                           "description": "Test description",
-                           "type_id": "1",
-                           "group_id": "1",
-                           "price": "50"
-                         }
+//              var data = {
+//                           "title": "Test",
+//                           "description": "Test description",
+//                           "type_id": "1",
+//                           "group_id": "1",
+//                           "price": "50"
+//                         }
 	      var method = '/createAdvert';
               var promise = $http.post(ServerURL+method, data).then(function (response) {
                   return response.data;

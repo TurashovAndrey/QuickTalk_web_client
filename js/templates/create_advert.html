@@ -1,11 +1,41 @@
-<div ng-controller="CreateAdvertController">
-    <div class="form-group">
-       <label for="inputTitle">Title</label>
-       <input ng-model="title" id="inputTitle">
-    </div>
-    <div class="form-group">
-       <label for="inputDescription">Title</label>
-       <input ng-model="description" id="inputDescription">
-    </div>
-    <button ng-click="create_advert()">Create</button>
+<div class="container" ng-controller="CreateAdvertController">
+
+    <form role="form" style="width:400px; margin: 0 auto;">
+
+        <div class="required-field-block">
+            <label for="title">Название</label>
+            <input type="text" id="title" placeholder="Название" class="form-control" ng-model="title">
+            <div class="required-icon">
+                <div class="text">*</div>
+            </div>
+        </div>
+
+        <div class="required-field-block">
+            <label for="description">Описание</label>
+            <textarea rows="3" id="description" class="form-control" placeholder="Описание" ng-model="description"></textarea>
+            <div class="required-icon">
+                <div class="text">*</div>
+            </div>
+        </div>
+
+        <div class="required-field-block">
+            <label for="price">Цена</label>
+            <input type="text" id="price" placeholder="Цена" class="form-control" ng-model="price">
+            <div class="required-icon">
+                <div class="text">*</div>
+            </div>
+        </div>
+
+        <div class="required-field-block">
+            <label for="category">Категория</label>
+            <select id="category" ng-model="category" ng-options="category.name for category in categories"></select>
+        </div>
+
+        <div class="required-field-block">
+            <label for="type">Type</label>
+            <select id="type" ng-model="type" ng-options="type.name for type in types"></select>
+        </div>
+
+        <button class="btn btn-primary" ng-click="create_advert()">Send</button>
+    </form>
 </div>
