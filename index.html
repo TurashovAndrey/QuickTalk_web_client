@@ -40,11 +40,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">Title</a>
+            <a class="brand" href="#">Leasing Project</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
                 <ul class="nav">
-                    <li class="active"><a href="#/create_advert">New advert</a></li>
-                    <li><a href="#/profile">Profile</a></li>
+                    <li class="active" ng-show="is_logged_in()"><a href="#/create_advert">New advert</a></li>
+                    <li><a href="#/profile" ng-show="is_logged_in()">Profile</a></li>
                     <li><a href="#/adverts">Adverts</a></li>
                     <li><a href="#/my_adverts" ng-show="is_logged_in()">My Adverts</a></li>
                     <li><a href="#/login" ng-show="!is_logged_in()">Login</a></li>

@@ -8,7 +8,6 @@ angular.module("leasingApp")
 //             $scope.isLoading = false;
 //        });
 
-
    CategoriesService.get_types($routeParams.category_id).then(function(data) {
       $scope.types = data.types;
    });

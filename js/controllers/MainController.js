@@ -1,6 +1,6 @@
 angular.module("leasingApp",["ngRoute","ngResource", "requestsModule", "advertsModule", "usersModule", "CategoriesModule","CitiesModule",'ui.bootstrap','dialogs', 'autocomplete'])
 .controller("MainController", function(CategoriesService,RequestsService,AdvertsService,UsersService,$scope) {
-   CategoriesService.get_categories().then(function(data) {
+   CategoriesService.get_categories().success(function(data) {
       $scope.categories = data.categories;
    });
    
