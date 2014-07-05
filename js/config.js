@@ -17,6 +17,10 @@ angular.module("leasingApp").config(['$routeProvider',
           templateUrl: 'js/templates/adverts-list.html', 
           controller: 'AdvertController'
         }).
+      when('/advert/:advert_id', {
+          templateUrl: 'js/templates/advert-details.html',
+          controller: 'RequestController'
+        }).
       when('/adverts/', {
           templateUrl: 'js/templates/adverts-list.html', 
           controller: 'AdvertController'
