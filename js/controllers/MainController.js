@@ -1,5 +1,5 @@
 angular.module("leasingApp",["ngRoute","ngResource", "requestsModule", "advertsModule", "usersModule", "CategoriesModule","CitiesModule",'ui.bootstrap','dialogs', 'autocomplete'])
-.controller("MainController", function(CategoriesService,RequestsService,AdvertsService,UsersService,$scope) {
+.controller("MainController", function(CategoriesService,RequestsService,AdvertsService,UsersService,$scope, $location) {
    CategoriesService.get_categories().success(function(data) {
       $scope.categories = data.categories;
    });
@@ -8,8 +8,11 @@ angular.module("leasingApp",["ngRoute","ngResource", "requestsModule", "advertsM
      return $scope.name;
    };
 
+   $scope.get_adverts = function() {
+     $location.path('/search_adverts/'+$scope.keyword);
+   };
 
-   //Categories.getCategories().$promise.then(function (data) {
+   //Categories.getCategories().$promisestate.then(function (data) {
    //         $scope.categories = data.categories;  
    //     }).finally(function () {
    //        $scope.isLoading = false;

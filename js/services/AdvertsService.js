@@ -64,5 +64,11 @@ angular.module('advertsModule', [])
               });
               return promise;
           },
+
+          get_adverts_by_keyword : function(keyword) {
+              var method = '/getAdverts?keyword='+keyword;
+              var promise = $http.get(ServerURL+method);
+              return promise;
+          }
   }
 })
