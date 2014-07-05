@@ -11,3 +11,16 @@
         </div>
     </div>
 </div>
+
+<div ng-repeat="advert in adverts" class="container media well">
+    <a class="pull-left" href="#">
+        <img class="media-object img-rounded img-responsive"  src="http://placehold.it/200x150" alt="placehold.it/200x150">
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading" style="color: blue">{{advert.title}}</h4>
+        <p>{{advert.description}}</p>
+        <h4 class="modal-footer" style="margin-top: 50px">{{advert.price}} грн.</h4>
+    </div>
+</div>
+
+
