@@ -1,10 +1,5 @@
 <div class="container">
-    <div>
-        <label for="city">Город</label>
-        <select id="city" ng-model="city" ng-options="city.city_name for city in cities"></select>
-   </div>
-
-    <div ng-repeat="advert in adverts" class="media well">
+    <div class="media well">
         <a class="pull-left" href="/advert/{{advert.advert_id}}">
             <img class="media-object img-rounded img-responsive"  src="http://placehold.it/200x150" alt="placehold.it/200x150">
         </a>
@@ -14,4 +9,22 @@
             <h4 class="modal-footer" style="margin-top: 50px">{{advert.price}} грн.</h4>
         </div>
 	</div>
+
+    <h2>Requests:</h2>
+    <div ng-repeat="request in requests" class="media well">
+        <div class="media-body">
+            <h4 class="media-heading" style="color: blue">{{request.request_user_id}}</h4>
+            <h4 class="modal-footer" style="margin-top: 50px">{{request.advert_id}}</h4>
+        </div>
+	</div>
+
+    <h2>Comments:</h2>
+    <div ng-repeat="comment in comments" class="media well">
+        <div class="media-body">
+            <h4 class="media-heading" style="color: blue">{{comment.description}}</h4>
+            <h4 class="modal-footer" style="margin-top: 50px">{{comment.from_user_id}}</h4>
+        </div>
+	</div>
+
+
 </div>

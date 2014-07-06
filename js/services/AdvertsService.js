@@ -69,6 +69,13 @@ angular.module('advertsModule', [])
               var method = '/getAdverts?keyword='+keyword;
               var promise = $http.get(ServerURL+method);
               return promise;
+          },
+
+          get_advert_comments : function(advert_id) {
+              var method = '/getAdvertComments?advert_id='+advert_id;
+              var promise = $http.get(ServerURL+method);
+              return promise;
           }
+
   }
 })
