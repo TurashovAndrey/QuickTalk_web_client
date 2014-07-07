@@ -1,5 +1,7 @@
 angular.module("leasingApp")
-.controller("AdvertController", function(AdvertsService, UsersService, CitiesService, $scope, $routeParams, $location) {
+.controller("AdvertController", function(AdvertsService, UsersService, CitiesService, $scope, $routeParams, $location, Pagination) {
+   $scope.pagination = Pagination.getNew(2);
+
 
    if ($routeParams.keyword) {
 	   AdvertsService.get_adverts_by_keyword($routeParams.keyword).then(function(data) {
@@ -27,6 +29,11 @@ angular.module("leasingApp")
            }
        }
    }
+
+   $scope.$watch('adverts', function(data) {
+      $scope.pagination.numPages = Math.ceil($scope.adverts.length/$scope.pagination.perPage);
+   });
+
 
    CitiesService.get_cities().success(function(data) {
       $scope.cities = data.cities;

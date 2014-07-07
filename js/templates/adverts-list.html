@@ -4,7 +4,7 @@
         <select id="city" ng-model="city" ng-options="city.city_name for city in cities"></select>
    </div>
 
-    <div ng-repeat="advert in adverts" class="media well">
+    <div ng-repeat="advert in adverts| startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage" class="media well">
         <a class="pull-left" href="#/advert/{{advert.advert_id}}">
             <img class="media-object img-rounded img-responsive"  src="http://placehold.it/200x150" alt="placehold.it/200x150">
         </a>
@@ -14,4 +14,6 @@
             <h4 class="modal-footer" style="margin-top: 50px">{{advert.price}} грн.</h4>
         </div>
 	</div>
+    <button ng-click="pagination.prevPage()">Previous</button>
+    <button ng-click="pagination.nextPage()">Next</button>
 </div>

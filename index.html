@@ -6,11 +6,13 @@
   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="css/adverts.css">
 
+  <script type="text/javascript" src="css/bootstrap/js/bootstrap.js"></script>
   <script src="/js/lib/angular/angular.js"></script>
   <script src="/js/lib/angular/angular-resource.js"></script>
   <script src="/js/lib/angular/angular-route.js"></script>
   <script src="/js/lib/angular/ui-bootstrap-tpls-0.6.0.js" type="text/javascript"></script>
   <script src="/js/lib/angular/dialogs.min.js" type="text/javascript"></script>
+  <script src="/js/lib/simplePagination.js" type="text/javascript"></script>
 
   <script src="/js/controllers/MainController.js"></script>
   <script src="/js/controllers/RequestController.js"></script>
@@ -30,9 +32,12 @@
   <script src="/js/services/CitiesService.js"></script>
 
   <script src="/js/directives/autocomplete.js"></script>
+  <script src="/js/directives/tooltip.js"></script>
+
 </head>
 
 <body>
+
 <div class="navbar navbar-inverse" style="position: static;" ng-controller="UserController">
       <div class="navbar-inner">
          <div class="container">
@@ -41,7 +46,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">Leasing Project</a>
+            <a class="brand" title="Test" href="#">Leasing Project</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
                 <ul class="nav">
                     <li class="active" ng-show="is_logged_in()"><a href="#/create_advert">New advert</a></li>
@@ -60,6 +65,9 @@
          </div>
       </div>
 </div>
+
+<span class="label label-warning" change-color style="color:blue;" title="You should pay order">Test</span>
+<div greet="someName"></div>
 
 <div ng-view></div>
 </body>
