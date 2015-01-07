@@ -6,11 +6,27 @@
   <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="css/adverts.css">
   <script src="js/lib/angular/angular.js"></script>
+
   <script src="js/app.js"></script>
   <script src="js/controllers/UserController1.js"></script>
-  <script src="js/services/UserService1.js"></script>
 </head>
 
 <body>
+    <div class="navbar" style="position: static;" ng-controller="UserController">
+          <div class="navbar-inner">
+                <a class="brand" title="QuickTalk Client" href="#">QuickTalk Client</a>
+                <div class="nav-collapse collapse navbar-inverse-collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="#/create_advert">{{'New advert'}}</a></li>
+                        <li><a href="/#/login" ng-show="!is_logged_in()">Login</a></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li><a href="#" ng-show="is_logged_in()">{{get_username()}}</a></li>
+                    </ul>
+             </div>
+          </div>
+    </div>
+    <div ng-view>
+    </div>
 </body>
 </html>
