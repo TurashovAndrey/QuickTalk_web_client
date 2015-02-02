@@ -53,5 +53,5 @@ angular.module("leasingApp").config(['$routeProvider',
         templateUrl: 'js/templates/types-list.html',
         controller: 'TypeController'
       }).
-     otherwise({redirectTo: '/categories'});
+     otherwise({redirectTo: '/login'});
   }]);
