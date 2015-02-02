@@ -40,7 +40,7 @@ angular.module("leasingApp",["ngRoute","ngResource", "requestsModule", "advertsM
    //});
 
 })
-.constant('ServerURL', 'http://fahlo.loc/leasing');
+.constant('ServerURL', 'http://fahlo.loc:8888/quicktalk');
 
 
 //var TestController = function($scope) {
