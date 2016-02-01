@@ -13,44 +13,46 @@
   <script src="js/lib/angular/ui-bootstrap-tpls-0.6.0.js" type="text/javascript"></script>
   <script src="js/lib/angular/dialogs.min.js" type="text/javascript"></script>
   <script src="js/lib/simplePagination.js" type="text/javascript"></script>
+    <script src="js/config.js"></script>
+    <script src="js/controllers/AuthController.js"></script>
+    <script src="js/services/AuthService.js"></script>
 
-  <script src="js/controllers/MainController.js"></script>
-  <script src="js/controllers/RequestController.js"></script>
-  <script src="js/controllers/MyCtrl.js"></script>
-  <script src="js/controllers/TypeController.js"></script>
-  <script src="js/controllers/ProfileController.js"></script>
-  <script src="js/controllers/UserController.js"></script>
-  <script src="js/controllers/AdvertController.js"></script>
-  <script src="js/controllers/CreateAdvertController.js"></script>
-  <script src="js/controllers/LogoutController.js"></script>
-  <script src="js/config.js"></script>
+  <!--<script src="js/controllers/MainController.js"></script>-->
+  <!--<script src="js/controllers/RequestController.js"></script>-->
+  <!--<script src="js/controllers/MyCtrl.js"></script>-->
+  <!--<script src="js/controllers/TypeController.js"></script>-->
+  <!--<script src="js/controllers/ProfileController.js"></script>-->
+  <!--<script src="js/controllers/UserController.js"></script>-->
+  <!--<script src="js/controllers/AdvertController.js"></script>-->
+  <!--<script src="js/controllers/CreateAdvertController.js"></script>-->
+  <!--<script src="js/controllers/LogoutController.js"></script>-->
 
-  <script src="js/services/CategoriesService.js"></script>
-  <script src="js/services/RequestsService.js"></script>
-  <script src="js/services/AdvertsService.js"></script>
-  <script src="js/services/UsersService.js"></script>
-  <script src="js/services/CitiesService.js"></script>
+  <!--<script src="js/services/CategoriesService.js"></script>-->
+  <!--<script src="js/services/RequestsService.js"></script>-->
+  <!--<script src="js/services/AdvertsService.js"></script>-->
+  <!--<script src="js/services/UsersService.js"></script>-->
+  <!--<script src="js/services/CitiesService.js"></script>-->
 
   <script src="/js/directives/autocomplete.js"></script>
-  <script src="/js/directives/tooltip.js"></script>
+  <script src="js/directives/tooltip.js"></script>
 </head>
 
 <body>
-    <div class="navbar" style="position: static;" ng-controller="UserController">
+    <div class="navbar" style="position: static;" ng-controller="AuthController">
           <div class="navbar-inner">
                 <a class="brand" title="QuickTalk Client" href="#">QuickTalk Client</a>
                 <div class="nav-collapse collapse navbar-inverse-collapse">
                     <ul class="nav">
-                        <li class="active" ng-show="is_logged_in()"><a href="#/create_advert">New advert</a></li>
-                        <li><a href="/#/profile" ng-show="is_logged_in()">Profile</a></li>
+                        <li class="active" ng-show="isLoggedIn()"><a href="#/create_advert">New advert</a></li>
+                        <li><a href="/#/profile" ng-show="isLoggedIn()">Profile</a></li>
                         <li><a href="/#/adverts">Adverts</a></li>
-                        <li><a href="/#/my_adverts" ng-show="is_logged_in()">My Adverts</a></li>
-                        <li><a href="/#/login" ng-show="!is_logged_in()">Login</a></li>
-                        <li><a href="/#/logout" ng-show="is_logged_in()">Logout</a></li>
-                        <li><a href="/#/signup" ng-show="!is_logged_in()">SignUp</a></li>
+                        <li><a href="/#/my_adverts" ng-show="isLoggedIn()">My Adverts</a></li>
+                        <li><a href="/#/login" ng-show="!isLoggedIn()">Login</a></li>
+                        <li><a href="/#/signup" ng-show="!isLoggedIn()">SignUp</a></li>
                     </ul>
                     <ul class="nav pull-right">
-                        <li><a href="#" ng-show="is_logged_in()">{{get_username()}}</a></li>
+                        <li><a href="/#/logout" ng-show="isLoggedIn()">Logout</a></li>
+                        <li><a href="#" ng-show="isLoggedIn()">{{getUsername()}}</a></li>
                     </ul>
              </div>
           </div>

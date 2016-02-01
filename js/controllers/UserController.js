@@ -1,4 +1,4 @@
-angular.module("leasingApp")
+angular.module("ngQuickTalkApp")
 .controller("UserController", function(UsersService, $scope, $routeParams, $location, $dialogs) {
    $scope.signin = function() {
       data = {
