@@ -1,4 +1,4 @@
-angular.module('leasingApp', ['ngRoute'])
+angular.module('leasingApp', ['ngRoute', 'ngCookies'])
 .config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -55,4 +55,10 @@ angular.module('leasingApp', ['ngRoute'])
      //   controller: 'TypeController'
      // }).
      otherwise({redirectTo: '/login'});
-  }]);
+  }])
+    .config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+        $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    }]);

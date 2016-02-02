@@ -33,7 +33,7 @@ angular.module("ngQuickTalkApp")
 
    $scope.signup = function() {
       data = {
- 		"email": $scope.username,
+ 		"username": $scope.username,
 		"password": $scope.password
 	     }
 
