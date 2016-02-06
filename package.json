@@ -1,0 +1,9 @@
+{
+  "name": "TalkUp",
+  "version": "0.0.1",
+  "dependencies": {
+    "node-static": "latest",
+    "jquery": "latest",
+    "quickblox": "latest"
+  }
+}

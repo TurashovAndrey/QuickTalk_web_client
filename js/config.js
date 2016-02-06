@@ -1,4 +1,4 @@
-angular.module('leasingApp', ['ngRoute', 'ngCookies'])
+angular.module('leasingApp', ['ngRoute'])
 .config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -50,6 +50,10 @@ angular.module('leasingApp', ['ngRoute', 'ngCookies'])
         controller: 'ProfileController',
         templateUrl: 'js/templates/profile.html'
       }).
+        when('/videochat', {
+          controller: 'ChatController',
+          templateUrl: 'js/templates/videochat.html'
+        }).
      // when('/test', {
      //   templateUrl: 'js/templates/types-list.html',
      //   controller: 'TypeController'
